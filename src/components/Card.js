@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
+import api_key from "../.hidden/api_key";
 
 const CardComponent = () => {
-    const api_key = 'api_key=46077ce24d4f82dbcaa2828a33a34916'
     const base_url = `https://image.tmdb.org/t/p/w500`
     const [trendingMovies, setTrendingMovies] = useState([])
 
