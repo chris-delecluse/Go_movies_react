@@ -1,7 +1,5 @@
 # Premier projet avec la bibliotheque React
 
-- [Github pages](https://chris-delecluse.github.io/Go_movies_react/)
-
 Pour mon tout premier projet en utilisan t react, j'ai décider de rependre un exercice que j'ai du réaliser en groupe lors de ma formation à BeCode.
 
 L'exercice consistait a utiliser l'API [TMDB - the movie db](https://www.themoviedb.org/?language=fr) et de créer un petit front de cet API
