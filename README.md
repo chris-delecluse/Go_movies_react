@@ -17,6 +17,14 @@ L'exercice consistait a utiliser l'API [TMDB - the movie db](https://www.themovi
 - Sass
   - [Mui materia](https://mui.com/material-ui/getting-started/installation/)
 
+
+## Utilisation
+
+Dans le cas ou vous clonez le repo vous devez :
+- npm -install (pour installer les dependences du projet)
+- npm start (pour demarrer le projet)
+- npm run sass (dans le cas ou vous voudriez ameliorer le style)
+
 ## Auteur
 
 Delecluse christopher
