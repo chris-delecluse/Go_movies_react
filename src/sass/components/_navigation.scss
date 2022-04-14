@@ -6,6 +6,10 @@
   justify-content: space-between;
   background-color: #A9A9A9;
 
+  position: fixed;
+  top: 0;
+  z-index: 2;
+
   div {
     padding: 7px 15px;
     border-radius: 10px;
