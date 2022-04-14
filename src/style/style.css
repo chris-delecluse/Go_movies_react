@@ -4,7 +4,6 @@ body {
 
 .container {
   width: 100vw;
-  height: 80vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -24,7 +23,7 @@ body {
 .navigation div {
   padding: 7px 15px;
   border-radius: 10px;
-  background-color: darkorange;
+  background-color: #262628;
 }
 .navigation div .navigation__title {
   font-size: 1.3em;
@@ -33,12 +32,21 @@ body {
 }
 .navigation ul {
   display: flex;
+  align-items: center;
   gap: 50px;
 }
 .navigation ul a {
+  color: #262628;
   font-size: 0.9em;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+.footer {
+  width: 100vw;
+  height: 10vh;
+  margin-top: 50px;
+  background-color: #A9A9A9;
 }
 
 /*# sourceMappingURL=style.css.map */

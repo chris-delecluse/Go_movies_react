@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from "../components/Navigation";
 import CardComponent from "../components/Card";
+import Footer from "../components/Footer";
 
 const Movies_p = () => {
     return (
@@ -9,6 +10,7 @@ const Movies_p = () => {
             <div className="container">
                 <CardComponent />
             </div>
+            <Footer />
         </div>
     );
 };
