@@ -1,0 +1,44 @@
+body {
+  background-color: #262628;
+}
+
+.container {
+  width: 100vw;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.navigation {
+  width: calc(100vw - 50px);
+  margin: 0 auto 50px auto;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #A9A9A9;
+}
+.navigation div {
+  padding: 7px 15px;
+  border-radius: 10px;
+  background-color: darkorange;
+}
+.navigation div .navigation__title {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: wheat;
+}
+.navigation ul {
+  display: flex;
+  gap: 50px;
+}
+.navigation ul a {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */
