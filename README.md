@@ -24,6 +24,13 @@ Dans le cas ou vous clonez le repo vous devez :
 - npm -install (pour installer les dependences du projet)
 - npm start (pour demarrer le projet)
 - npm run sass (dans le cas ou vous voudriez ameliorer le style)
+- aller sur le site : [TMDB - the movie db](https://www.themoviedb.org/?language=fr)
+  - créer un compte pour recevoir votre API key
+- ensuite : 
+  - créer un dossier ou fichier caché (.example) dans le dossier ' src ' et ajoutez : 
+    - const api_key = " votre key ";
+    - export default api_key;
+  - enjoy
 
 ## Auteur
 
