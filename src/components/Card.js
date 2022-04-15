@@ -32,8 +32,9 @@ const CardComponent = () => {
                 minWidth: 450,
                 maxWidth: 450,
                 textAlign: "center",
-                backgroundColor: "darkgray",
-                color: "white"
+                backgroundColor: "rgba(169, 169, 169, 0.20)",
+                color: "white",
+                borderBottom : 1,
             }}>
                 <CardActionArea>
                     <CardMedia
