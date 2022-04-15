@@ -17,7 +17,8 @@ body {
   padding: 10px 25px;
   display: flex;
   justify-content: space-between;
-  background-color: #A9A9A9;
+  border-bottom: solid 2px #A9A9A9;
+  background-color: rgba(38, 38, 40, 0.61);
   position: fixed;
   top: 0;
   z-index: 2;
@@ -30,7 +31,7 @@ body {
 .navigation div .navigation__title {
   font-size: 1.3em;
   font-weight: bold;
-  color: wheat;
+  color: darkorange;
 }
 .navigation ul {
   display: flex;
@@ -38,28 +39,20 @@ body {
   gap: 50px;
 }
 .navigation ul a {
-  color: #262628;
+  color: #A9A9A9;
   font-size: 0.9em;
   text-transform: uppercase;
   text-decoration: none;
 }
 
 .footer {
-  width: 100vw;
-  height: 60px;
+  width: 100%;
+  height: 25px;
   margin-top: 50px;
   position: fixed;
   bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #A9A9A9;
-}
-.footer a {
-  text-decoration: none;
-}
-.footer a:visited {
-  color: inherit;
+  border-top: solid 2px #A9A9A9;
+  background-color: rgba(38, 38, 40, 0.61);
 }
 
 /*# sourceMappingURL=style.css.map */

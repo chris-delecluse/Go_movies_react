@@ -1,41 +1,61 @@
-# Premier projet avec la bibliotheque React
+# My first project with React library
 
-Pour mon tout premier projet en utilisan t react, j'ai décider de rependre un exercice que j'ai du réaliser en groupe lors de ma formation à BeCode.
+For my first project using React, I decided to reuse an old team project we did during our BeCode training.
 
-L'exercice consistait a utiliser l'API [TMDB - the movie db](https://www.themoviedb.org/?language=fr) et de créer un petit front de cet API
+Our exercise was : Use [theMovieDB](https://www.themoviedb.org/?language=fr) api and create a front with its data.
+- name
+- overview
+- trailer
+- image
+- and more...
 
-- Nom du film
-- Image
-- Trailer
-- Synopsis
-- Et d'autres données que nous renvoie l'API
+## Language use
 
-## Language utilisé 
+<img src="https://img.shields.io/badge/-Javascript-yellow"> 
+<img src="https://img.shields.io/badge/-React-blue"> 
+<img src="https://img.shields.io/badge/-Material--ui-informational"> 
+<img src="https://img.shields.io/badge/-Sass-pink"> 
 
-- Javascript 
-  - [React](https://fr.reactjs.org/docs/getting-started.html)
-- Sass
-  - [Mui materia](https://mui.com/material-ui/getting-started/installation/)
+## Installation
+
+### After clone this repository
+
+``` npm -install ```
+
+To install all dependencies ( you can look at all dependencies inside of <  package.json > ) file.
+
+### Start sass, and run project
+
+``` npm start ```
+
+To run the project (localhost:portExample3000).
+
+``` npm run sass ```
+
+To start watching with Sass.
+
+### Get your own api key
+
+Before going to the next step you must have an account on [the movie DB](https://www.themoviedb.org/?language=fr) then get your api key.
+
+When you have your api key, you have to create a hidden folder in the "src" folder, inside this one you have to create a javascript file and insert this : 
+
+``` 
+const api_key = <insert your api key here>;
+
+export default api_key;
+ ```
+
+And that done !
 
 
-## Utilisation
-
-Dans le cas ou vous clonez le repo vous devez :
-- npm -install (pour installer les dependences du projet)
-- npm start (pour demarrer le projet)
-- npm run sass (dans le cas ou vous voudriez ameliorer le style)
-- aller sur le site : [TMDB - the movie db](https://www.themoviedb.org/?language=fr)
-  - créer un compte pour recevoir votre API key
-- ensuite : 
-  - créer un dossier ou fichier caché (.example) dans le dossier ' src ' et ajoutez : 
-    - const api_key = " votre key ";
-    - export default api_key;
-  - enjoy
-
-## Auteur
+## Author
 
 Delecluse christopher
 
+
 ## Note
 
-Le projet est en cours de developpement
+This project still in progress...
+
+***

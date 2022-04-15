@@ -42,10 +42,14 @@ const CardComponent = () => {
                         image={base_url + movie.poster_path}
                         alt="jacket"
                     />
-                    <CardContent>
+                    <CardContent
+                            sx={{
+                                fontSize: 18
+                            }}
+                    >
                         <Typography
-                            gutterBottom variant="h6"
-                            component="div"
+                            gutterBottom variant={"h6"}
+                            component={"p"}
                         />
                         { getTitle(movie)}
                     </CardContent>
