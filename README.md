@@ -46,7 +46,7 @@ const api_key = <insert your api key here>;
 export default api_key;
  ```
 
-And that done !
+And that's done !
 
 
 ## Author
