@@ -1,6 +1,6 @@
 .navigation {
   width: calc(100% - 50px);
-  margin: 0 auto 50px auto;
+  margin: 0 auto 0 auto;
   padding: 10px 25px;
   display: flex;
   justify-content: space-between;
@@ -33,6 +33,13 @@
       font-size: 0.9em;
       text-transform: uppercase;
       text-decoration: none;
+      transition: 0.4s ease-in-out;
+
+      &:hover {
+        color: darkorange;
+        transition: 0.4s ease-in-out;
+        transform: scale(1.3);
+      }
     }
   }
 }

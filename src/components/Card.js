@@ -6,17 +6,17 @@ import api_key from "../.hidden/api_key";
 const themeConfig = {
     minWidth: 450,
     maxWidth: 450,
-    textAlign: "center",
     backgroundColor: "rgba(169, 169, 169, 0.20)",
     color: "#A9A9A9",
+    textAlign: "center",
     borderBottom: 1,
-    transition: '0.4s ease-in-out',
+    transition: "0.4s ease-in-out",
 
     ":hover": {
-        transform: 'scale(1.1)',
-        transition: '0.4s ease-in-out',
         backgroundColor: "rgba(169, 169, 169, 0.60)",
         color: "#FFF",
+        transform: "scale(1.1)",
+        transition: "0.4s ease-in-out",
     },
 }
 
