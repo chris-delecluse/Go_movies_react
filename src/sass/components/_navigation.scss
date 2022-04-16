@@ -1,11 +1,11 @@
 .navigation {
-  width: calc(100vw - 50px);
+  width: calc(100% - 50px);
   margin: 0 auto 50px auto;
   padding: 10px 25px;
   display: flex;
   justify-content: space-between;
   border-bottom: solid 2px #A9A9A9;
-  background-color: rgba(38, 38, 40, 0.61);
+  background-color: rgba(38, 38, 40, 0.75);
 
   position: fixed;
   top: 0;

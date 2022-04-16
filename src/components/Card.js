@@ -3,6 +3,28 @@ import axios from "axios";
 import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
 import api_key from "../.hidden/api_key";
 
+const themeConfig = {
+    minWidth: 450,
+    maxWidth: 450,
+    textAlign: "center",
+    backgroundColor: "rgba(169, 169, 169, 0.20)",
+    color: "#A9A9A9",
+    borderBottom: 1,
+    transition: '0.4s ease-in-out',
+
+    ":hover": {
+        transform: 'scale(1.1)',
+        transition: '0.4s ease-in-out',
+        backgroundColor: "rgba(169, 169, 169, 0.60)",
+        color: "#FFF",
+    },
+}
+
+const fontConfig = {
+    fontFamily: "Roboto",
+    fontSize: 16
+}
+
 const CardComponent = () => {
     const base_url = `https://image.tmdb.org/t/p/w500`
     const [trendingMovies, setTrendingMovies] = useState([])
@@ -19,8 +41,8 @@ const CardComponent = () => {
 
     useEffect(() => {
         const fetchTrendingMovie = async () => {
-                const response = await axios.get(`https://api.themoviedb.org/3/trending/all/week?${api_key}`)
-                setTrendingMovies(response.data.results)
+            const response = await axios.get(`https://api.themoviedb.org/3/trending/all/week?${api_key}`)
+            setTrendingMovies(response.data.results)
         }
 
         fetchTrendingMovie()
@@ -28,14 +50,7 @@ const CardComponent = () => {
 
     return (
         trendingMovies.map((movie, index) => (
-            <Card sx={{
-                minWidth: 450,
-                maxWidth: 450,
-                textAlign: "center",
-                backgroundColor: "rgba(169, 169, 169, 0.20)",
-                color: "white",
-                borderBottom : 1,
-            }}>
+            <Card sx={themeConfig}>
                 <CardActionArea>
                     <CardMedia
                         component="img"
@@ -43,16 +58,12 @@ const CardComponent = () => {
                         image={base_url + movie.poster_path}
                         alt="jacket"
                     />
-                    <CardContent
-                            sx={{
-                                fontSize: 18
-                            }}
-                    >
+                    <CardContent sx={fontConfig}>
                         <Typography
                             gutterBottom variant={"h6"}
                             component={"p"}
                         />
-                        { getTitle(movie)}
+                        {getTitle(movie)}
                     </CardContent>
                 </CardActionArea>
             </Card>
