@@ -14,7 +14,8 @@ const themeConfig = {
 
     ":hover": {
         backgroundColor: "rgba(169, 169, 169, 0.60)",
-        color: "#FFF",
+        color: "#FF8C00FF",
+        borderBottom: 2,
         transform: "scale(1.1)",
         transition: "0.4s ease-in-out",
     },

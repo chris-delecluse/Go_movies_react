@@ -8,13 +8,13 @@ const Navigation = () => {
                 <p className="navigation__title">GO MOVIES</p>
             </div>
             <ul>
-                <NavLink to="/">
+                <NavLink  to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>
                     <li>Home</li>
                 </NavLink>
-                <NavLink to="/movies">
+                <NavLink to="/movies" className={(nav) => (nav.isActive) ? "nav-active" : ""}>
                     <li>Movies</li>
                 </NavLink>
-                <NavLink to="/about">
+                <NavLink to="/about" className={(nav) => (nav.isActive) ? "nav-active" : ""}>
                     <li>About</li>
                 </NavLink>
             </ul>
