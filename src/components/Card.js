@@ -1,11 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import axios from "axios";
-import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
-import api_key from "../.hidden/api_key";
+import React, { useEffect, useState } from 'react';
+import { Backdrop, Box, Card, CardActionArea, CardContent, CardMedia, Fade, Modal, Typography } from "@mui/material";
 
-const themeConfig = {
-    minWidth: 450,
+const cardTheme = {
     maxWidth: 450,
+    minWidth: 450,
     backgroundColor: "rgba(169, 169, 169, 0.20)",
     color: "#A9A9A9",
     textAlign: "center",
@@ -17,58 +15,96 @@ const themeConfig = {
         color: "#FF8C00FF",
         borderBottom: 2,
         transform: "scale(1.1)",
-        transition: "0.4s ease-in-out",
-    },
-}
+        transition: "0.4s ease-in-out"
+    }
+};
 
-const fontConfig = {
+const cardFonts = {
     fontFamily: "Roboto",
     fontSize: 16
-}
+};
 
-const CardComponent = () => {
-    const base_url = `https://image.tmdb.org/t/p/w500`
-    const [trendingMovies, setTrendingMovies] = useState([])
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4
+};
+
+const CardComponent = (props) => {
+    const base_url = `https://image.tmdb.org/t/p/w500`;
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
     const getTitle = (data) => {
         if (data.title !== undefined) {
-            return data.title
+            return data.title;
         } else if (data.original_title !== undefined) {
-            return data.original_title
+            return data.original_title;
         } else if (data.original_name !== undefined) {
-            return data.original_name
+            return data.original_name;
         }
-    }
-
-    useEffect(() => {
-        const fetchTrendingMovie = async () => {
-            const response = await axios.get(`https://api.themoviedb.org/3/trending/all/week?${api_key}`)
-            setTrendingMovies(response.data.results)
-        }
-
-        fetchTrendingMovie()
-    }, [])
+    };
 
     return (
-        trendingMovies.map((movie, index) => (
-            <Card sx={themeConfig}>
+        <div>
+            <Card
+                sx={cardTheme}
+                onClick={showModal}
+            >
                 <CardActionArea>
                     <CardMedia
                         component="img"
                         height="140"
-                        image={base_url + movie.poster_path}
+                        image={base_url + props.movie.poster_path}
                         alt="jacket"
                     />
-                    <CardContent sx={fontConfig}>
+                    <CardContent sx={cardFonts}>
                         <Typography
                             gutterBottom variant={"h6"}
                             component={"p"}
                         />
-                        {getTitle(movie)}
+                        {getTitle(props.movie)}
                     </CardContent>
                 </CardActionArea>
             </Card>
-        ))
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                open={isModalOpen}
+                onClose={closeModal}
+                onBackdropClick={closeModal}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500
+                }}
+            >
+                <Fade in={isModalOpen}>
+                    <Box sx={style}>
+                        <Typography id="transition-modal-title" variant="h6" component="h2">
+                            {getTitle(props.movie)}
+                        </Typography>
+                        <Typography id="transition-modal-description" sx={{ mt: 2 }}>
+                            {props.movie.overview}
+                        </Typography>
+                    </Box>
+                </Fade>
+            </Modal>
+        </div>
     );
 };
 
