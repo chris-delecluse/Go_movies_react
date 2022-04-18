@@ -1,42 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Backdrop, Box, Card, CardActionArea, CardContent, CardMedia, Fade, Modal, Typography } from "@mui/material";
-
-const cardTheme = {
-    maxWidth: 450,
-    minWidth: 450,
-    backgroundColor: "rgba(169, 169, 169, 0.20)",
-    color: "#A9A9A9",
-    textAlign: "center",
-    borderBottom: 1,
-    transition: "0.4s ease-in-out",
-
-    ":hover": {
-        backgroundColor: "rgba(169, 169, 169, 0.60)",
-        color: "#FF8C00FF",
-        borderBottom: 2,
-        transform: "scale(1.1)",
-        transition: "0.4s ease-in-out"
-    }
-};
-
-const cardFonts = {
-    fontFamily: "Roboto",
-    fontSize: 16
-};
-
-const modalBoxStyle = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    minWidth: 350,
-    height: 600,
-    bgcolor: '#262628',
-    border: 'solid 1px #A9A9A9',
-    borderRadius: 2,
-    boxShadow: 24,
-    overflow: "hidden"
-};
+import {
+    cardTheme,
+    cardFonts,
+    modalTypographyNormalStyle,
+    modalTypographyBigStyle,
+    modalMainBoxStyle
+} from "./styles/movieCardStyle";
 
 const CardComponent = (props) => {
     const base_url = `https://image.tmdb.org/t/p/w500`;
@@ -96,19 +66,33 @@ const CardComponent = (props) => {
                 }}
             >
                 <Fade in={isModalOpen}>
-                    <Box sx={modalBoxStyle}>
+                    <Box sx={modalMainBoxStyle}>
                         <CardMedia
                             component="img"
                             width="100%"
-                            height="300"
                             image={base_url + props.movie.backdrop_path}
                         />
-                        <Typography id="transition-modal-title" variant="h6" component="h2">
-                            {getTitle(props.movie)}
-                        </Typography>
-                        <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                            {props.movie.overview}
-                        </Typography>
+                        <Box sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            padding: "25px"
+                        }}>
+                            <Typography
+                                id="transition-modal-title"
+                                variant="h6"
+                                component="h2"
+                                sx={modalTypographyBigStyle}
+                            >
+                                {getTitle(props.movie)}
+                            </Typography>
+                            <Typography sx={modalTypographyNormalStyle}>
+                                {props.movie.vote_average} / 10
+                            </Typography>
+                            <Typography id="transition-modal-description" sx={modalTypographyNormalStyle}>
+                                {props.movie.overview}
+                            </Typography>
+                        </Box>
                     </Box>
                 </Fade>
             </Modal>

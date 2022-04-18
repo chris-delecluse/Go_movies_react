@@ -25,6 +25,7 @@ const Movies_p = () => {
                     return <CardComponent key={key} movie={el}/>;
                 })}
             </div>
+            {console.log(trendingMovies)}
         </div>
     );
 };

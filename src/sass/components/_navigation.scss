@@ -4,7 +4,7 @@
   padding: 10px 25px;
   display: flex;
   justify-content: space-between;
-  border-bottom: solid 2px #A9A9A9;
+  border-bottom: solid 2px $lightGrey;
   background-color: rgba(38, 38, 40, 0.75);
 
   position: fixed;
@@ -19,7 +19,7 @@
     .navigation__title {
       font-size: 1.3em;
       font-weight: bold;
-      color: darkorange;
+      color: $orange;
     }
   }
 
@@ -30,14 +30,14 @@
 
     .nav-active {
       position: relative;
-      color: #FF8C00FF;
+      color: $orange;
       transition: color 0.2s ease-in-out;
 
       &::after {
         content: "";
         height: 4px;
         width: 0;
-        background: #FF8C00FF;
+        background: $orange;
         position: absolute;
         border-radius: 10px;
         bottom: -23px;
@@ -48,14 +48,14 @@
     }
 
     a {
-      color: #A9A9A9;
+      color: $lightGrey;
       font-size: 0.9em;
       text-transform: uppercase;
       text-decoration: none;
       transition: 0.2s ease-in-out;
 
       &:hover {
-        color: #FF8C00FF;
+        color: $orange;
         transition: 0.2s ease-in-out;
       }
     }
