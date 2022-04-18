@@ -4,7 +4,7 @@ import Navigation from "../components/Navigation";
 const Home_p = () => {
     return (
         <div>
-            <Navigation />
+            <Navigation/>
             <h1>Home</h1>
         </div>
     );

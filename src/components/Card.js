@@ -1,16 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { Backdrop, Box, Card, CardActionArea, CardContent, CardMedia, Fade, Modal, Typography } from "@mui/material";
+import React, { useState } from 'react';
 import {
-    cardTheme,
+    Backdrop,
+    Box,
+    Card,
+    CardActionArea,
+    CardContent,
+    CardMedia,
+    Fade,
+    Modal,
+    Rating,
+    Typography
+} from "@mui/material";
+import StarIcon from '@mui/icons-material/Star';
+import {
     cardFonts,
-    modalTypographyNormalStyle,
+    cardTheme,
+    modalMainBoxStyle,
     modalTypographyBigStyle,
-    modalMainBoxStyle
-} from "./styles/movieCardStyle";
+    modalTypographyContent,
+    modalTypographyNormalStyle, modalTypographyReleaseDate,
+    rateStyle
+} from "./styles/movieCardStyle.css";
 
 const CardComponent = (props) => {
     const base_url = `https://image.tmdb.org/t/p/w500`;
-
+    const value = props.movie.vote_average;
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const showModal = () => {
@@ -72,12 +86,7 @@ const CardComponent = (props) => {
                             width="100%"
                             image={base_url + props.movie.backdrop_path}
                         />
-                        <Box sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            padding: "25px"
-                        }}>
+                        <Box sx={modalTypographyContent}>
                             <Typography
                                 id="transition-modal-title"
                                 variant="h6"
@@ -86,13 +95,22 @@ const CardComponent = (props) => {
                             >
                                 {getTitle(props.movie)}
                             </Typography>
-                            <Typography sx={modalTypographyNormalStyle}>
-                                {props.movie.vote_average} / 10
+                            <Typography sx={modalTypographyReleaseDate}>
+                                {props.movie.release_date}
                             </Typography>
-                            <Typography id="transition-modal-description" sx={modalTypographyNormalStyle}>
-                                {props.movie.overview}
-                            </Typography>
+                            <Box>
+                                <Rating
+                                    name="text-feedback"
+                                    value={value / 2}
+                                    readOnly
+                                    precision={0.5}
+                                    emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit"/>}
+                                />
+                            </Box>
                         </Box>
+                        <Typography id="transition-modal-description" sx={modalTypographyNormalStyle}>
+                            {props.movie.overview}
+                        </Typography>
                     </Box>
                 </Fade>
             </Modal>

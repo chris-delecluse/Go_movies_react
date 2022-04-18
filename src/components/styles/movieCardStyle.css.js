@@ -34,16 +34,31 @@ export const modalMainBoxStyle = {
     overflow: "hidden"
 };
 
-export const modalTypographyNormalStyle = {
+export const modalTypographyContent = {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "5px 25px 0 25px"
+};
+
+export const modalTypographyReleaseDate = {
     fontFamily: "Roboto",
     fontSize: 16,
     color: "#A9A9A9",
     mt: 1
+}
+
+export const modalTypographyNormalStyle = {
+    fontFamily: "Roboto",
+    fontSize: 16,
+    color: "#A9A9A9",
+    mt: 1,
+    padding: "25px"
 };
 
 export const modalTypographyBigStyle = {
     fontFamily: "Roboto",
-    fontSize: 16,
+    fontSize: 20,
     color: '#FF8C00FF',
     mt: 1
 };
