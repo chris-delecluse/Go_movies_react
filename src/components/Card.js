@@ -24,16 +24,18 @@ const cardFonts = {
     fontSize: 16
 };
 
-const style = {
+const modalBoxStyle = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
+    minWidth: 350,
+    height: 600,
+    bgcolor: '#262628',
+    border: 'solid 1px #A9A9A9',
+    borderRadius: 2,
     boxShadow: 24,
-    p: 4
+    overflow: "hidden"
 };
 
 const CardComponent = (props) => {
@@ -94,7 +96,13 @@ const CardComponent = (props) => {
                 }}
             >
                 <Fade in={isModalOpen}>
-                    <Box sx={style}>
+                    <Box sx={modalBoxStyle}>
+                        <CardMedia
+                            component="img"
+                            width="100%"
+                            height="300"
+                            image={base_url + props.movie.backdrop_path}
+                        />
                         <Typography id="transition-modal-title" variant="h6" component="h2">
                             {getTitle(props.movie)}
                         </Typography>
